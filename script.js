@@ -85,6 +85,10 @@ function displayContacts() {
 
             const deleteBtn = document.createElement("button");
             deleteBtn.textContent = "Delete";
+            deleteBtn.addEventListener("click", function() {
+                contacts.splice(index, 1);
+                displayContacts();
+            });
 
             buttonContainer.appendChild(editBtn);
             buttonContainer.appendChild(deleteBtn);
@@ -100,4 +104,5 @@ function displayContacts() {
     });
 
 }
+
 
