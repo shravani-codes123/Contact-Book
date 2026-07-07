@@ -1,14 +1,14 @@
 
 const contacts = []
 
+let editingIndex = -1;
 const nameField = document.getElementById('name');
 const phoneField = document.getElementById('phone');
 const emailField = document.getElementById('email');
 const dateField = document.getElementById('date');
 const addContactbtn = document.getElementById('submit-btn-id');
 const updateBtn = document.getElementById('updateBtn');
-const EditBtn = document.getElementById('editBtn');
-const DeleteBtn = document.getElementById('deleteBtn');
+
 const clearBtn = document.getElementById('clear-btn-id');
 const contactDisplay = document.getElementById('contactDisplay');
 
@@ -26,6 +26,7 @@ if(nameField && phoneField && emailField && dateField && addContactbtn) {
         contacts.push(contact);// added the contact object to the contact array
         displayContacts();
         console.log(contacts);
+        clearForm() 
     });
 }
 
@@ -34,10 +35,7 @@ if (
     phoneField.value.trim() === "" ||
     emailField.value.trim() === "" ||
     dateField.value === ""
-) {
-    alert("Please fill all fields.");
-  
-}
+)
 
 
 if(clearBtn) {
@@ -82,6 +80,10 @@ function displayContacts() {
          //creating edit button
             const editBtn = document.createElement("button");
             editBtn.textContent = "Edit";
+            editBtn.addEventListener("click", function() {
+               
+                editContact(index);
+            });
 
             const deleteBtn = document.createElement("button");
             deleteBtn.textContent = "Delete";
@@ -101,6 +103,46 @@ function displayContacts() {
 
             contactDisplay.appendChild(contactCard);
 
+    });
+
+}
+function clearForm() {
+    nameField.value = "";
+    phoneField.value = "";
+    emailField.value = "";
+    dateField.value = "";
+}
+
+
+
+function editContact(index){
+    console.log("Editing contact at index:", index);
+    editingIndex = index;
+
+    const contact = contacts[index];
+    nameField.value = contact.name;
+    phoneField.value = contact.phone;
+    emailField.value = contact.email;
+    dateField.value = contact.date;
+
+    addContactbtn.style.display = "none";
+    updateBtn.style.display = "inline-block";
+
+    updateBtn.addEventListener("click", function() {
+        contacts[editingIndex] = {
+            name: nameField.value,
+            phone: phoneField.value,
+            email: emailField.value,
+            date: dateField.value
+        };
+
+        editingIndex = -1; // Reset the editing index
+       
+        addContactbtn.style.display = "inline-block";
+        updateBtn.style.display = "none";
+        
+        clearForm();
+        displayContacts();
     });
 
 }
