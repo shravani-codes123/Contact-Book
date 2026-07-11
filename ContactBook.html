@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactBook - Simple Contact Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar-content">
+            <h1 class="navbar-title"> ContactBook</h1>
+            <p class="navbar-subtitle">Manage Your Contacts</p>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-wrapper">
+        <!-- Left Container - Add Contact Form -->
+        <div id="left-container" class="container">
+            <div class="container-header">
+                <h2> Add Contact</h2>
+            </div>
+            <form id="addContactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Contact No:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <button id="submit-btn-id" type="submit" class="btn btn-add">Add Contact</button>
+                 <button id="updateBtn" style="display:none;">Update Contact</button>
+                <button id="clear-btn-id" type="button" class="btn btn-clear">Clear Form</button>
+            </form>
+        </div>
+
+        <!-- Right Container - Search Contact -->
+        <div id="right-container" class="container">
+            <div class="container-header">
+                <h2> Search Contact</h2>
+            </div>
+            <div class="search-section">
+                <input type="text" id="searchInput" class="search-field" placeholder="Search by name or phone number...">
+                
+               
+                <div class="contact-list" id="contactDisplay">
+                 </div>
+
+                </div>
+
+              
+            </div>
+        </div>
+    
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Features</h3>
+                <ul>
+                    <li>✓ Add and manage contacts</li>
+                    <li>✓ Search contacts easily</li>
+                    <li>✓ Edit contact information</li>
+                    <li>✓ Delete contacts</li>
+                    <li>✓ Save all changes</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About ContactBook</h3>
+                <p>A simple and elegant contact management system to organize and manage your personal and professional contacts efficiently.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li>📧 support@contactbook.com</li>
+                    <li>📞 1-800-CONTACTS</li>
+                    <li>🌐 www.contactbook.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ContactBook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

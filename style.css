@@ -2,6 +2,8 @@
 /* ============================================
    GENERAL STYLES
    ============================================ */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -53,8 +55,9 @@ body {
     max-width: 1200px;
     margin: 0 auto 30px;
     padding: 0 30px;
-    min-height: calc(100vh - 200px);
+ 
 }
+
 
 /* ============================================
    CONTAINER STYLES
@@ -68,7 +71,8 @@ body {
     border: 1px solid rgba(37, 99, 235, 0.1);
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
+
+    height: 650px;      /* Add this */
 }
 
 .container:hover {
@@ -86,7 +90,9 @@ body {
     color: #2563eb;
     margin: 0;
 }
-
+#right-container {
+    overflow: hidden;
+}
 /* ============================================
    FORM STYLES
    ============================================ */
@@ -133,13 +139,13 @@ body {
 /* ============================================
    SEARCH SECTION
    ============================================ */
+
 .search-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     flex: 1;
+    min-height: 0;
 }
-
 .search-field {
     padding: 12px 15px;
     border: 2px solid #e5e7eb;
@@ -170,6 +176,15 @@ body {
     flex: 1;
 }
 
+.contact-list {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+
+    margin-top: 20px;
+    padding-right: 5px;
+}
+
 .no-contact {
     margin: 0;
 }
@@ -186,6 +201,7 @@ body {
 .contact-info-display strong {
     color: #2563eb;
 }
+
 /* ============================================
    CONTACT CARD STYLES
    ============================================ */
@@ -396,11 +412,15 @@ body {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 768px) {
-    .main-wrapper {
-        flex-direction: column;
-        gap: 20px;
-        min-height: auto;
-    }
+   .main-wrapper {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 30px;
+
+    align-items: stretch;
+}
 
     .navbar-title {
         font-size: 20px;

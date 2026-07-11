@@ -1,6 +1,8 @@
 
 const contacts = []
 
+
+
 let editingIndex = -1;
 const nameField = document.getElementById('name');
 const phoneField = document.getElementById('phone');
@@ -12,35 +14,82 @@ const clearBtn = document.getElementById('clear-btn-id');
 const contactDisplay = document.getElementById('contactDisplay');
 const searchInput = document.getElementById('searchInput');
 
+
+loadContacts();
 //validation for empty fields
+function checkValidation(){
+
+    const Username = nameField.value.trim();
+    const MobileNumber = phoneField.value.trim();
+    const Email = emailField.value.trim();
+
+    if(Username.length < 3){
+        alert("Enter Username Contains atleast 3 characters. ")
+        return false;
+    } 
+
+    if(MobileNumber.length!=10 || isNaN(MobileNumber)){
+        alert("Enter Valid Mobile Number.");
+        return false;
+    }
+    
+    if(!Email.includes('@')){
+        alert("email must contains '@' symbol");
+        return false;
+    }
+    return true;
+}
+
 if(nameField && phoneField && emailField && dateField && addContactbtn) {
     addContactbtn.addEventListener('click', function(e) {
-        e.preventDefault(); //prevent the default form submission behavior
+        e.preventDefault(); //prevent the default form 
+        //submission behavior
+
+        if (checkValidation()){
+            return;
+        }
+
         const contact = {
             name: nameField.value,
             phone: phoneField.value,
             email: emailField.value,
             date: dateField.value
         };
-        if (
-            nameField.value.trim() === "" ||
-            phoneField.value.trim() === "" ||
-            emailField.value.trim() === "" ||
-            dateField.value === ""
-        ) {
-            // Show an error message or prevent form submission
-            alert("Please fill in all fields.");
-            return;
-        }
 
         contacts.push(contact);// added the contact object to the contact array
-        displayContacts(contacts);
+        SaveContacts();
+
+        displayContacts(contacts)    
+
         console.log(contacts);
         clearForm() 
     });
 }
 
+//Local Storage
+function SaveContacts(){
 
+    const data = JSON.stringify(contacts);
+
+    localStorage.setItem("contacts", data);
+
+}
+
+function loadContacts()
+{   //read
+   
+      const data = localStorage.getItem("contacts")
+      if(data){
+           JSON.parse(data).forEach((contact , index)=>{
+              contacts.push(contact)
+           }); 
+      }else{
+        console.log("No contact Found!");
+      }
+     
+      displayContacts(contacts);
+
+}
 
 if(clearBtn) {
     clearBtn.addEventListener('click', function(e) {
@@ -95,6 +144,7 @@ function displayContacts(list) {
             deleteBtn.textContent = "Delete";
             deleteBtn.addEventListener("click", function() {
                 contacts.splice(index, 1);
+                SaveContacts();
                 displayContacts(contacts);
             });
 
@@ -139,6 +189,10 @@ updateBtn.addEventListener("click", function () {
     addContactbtn.style.display = "inline-block";
     updateBtn.style.display = "none";
 
+
+    //after updation save contacts
+    SaveContacts();
+
     clearForm();
     displayContacts(contacts);
 });
@@ -156,6 +210,8 @@ function editContact(index) {
 
     addContactbtn.style.display = "none";
     updateBtn.style.display = "inline-block";
+
+    
 }
 
 //search functionality 
@@ -174,3 +230,4 @@ searchInput.addEventListener("input" ,function () {
    displayContacts(filteredContacts);
 
 });
+

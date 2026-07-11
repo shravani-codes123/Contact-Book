@@ -1,105 +1,246 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ContactBook - Simple Contact Manager</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ContactBook | Manage Your Contacts</title>
+
+    <link rel="stylesheet" href="landing.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navbar -->
-    <nav id="navbar">
-        <div class="navbar-content">
-            <h1 class="navbar-title"> ContactBook</h1>
-            <p class="navbar-subtitle">Manage Your Contacts</p>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-address-book"></i>
+            <span>ContactBook</span>
         </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
     </nav>
 
-    <!-- Main Container -->
-    <div class="main-wrapper">
-        <!-- Left Container - Add Contact Form -->
-        <div id="left-container" class="container">
-            <div class="container-header">
-                <h2> Add Contact</h2>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Manage Your Contacts Effortlessly</h1>
+
+        <p>
+            Organize, search, edit and manage your contacts in one
+            clean, fast and responsive application.
+        </p>
+
+        <a href="contactbook.html" class="btn-primary">
+            Get Started
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <div class="hero-highlights">
+
+            <div class="highlight">
+                <i class="fa-solid fa-user-plus"></i>
+                <span>Add Contacts</span>
             </div>
-            <form id="addContactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter full name" required>
-                </div>
 
-                <div class="form-group">
-                    <label for="phone">Contact No:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
-                </div>
+            <div class="highlight">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Fast Search</span>
+            </div>
 
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter email address" required>
-                </div>
+            <div class="highlight">
+                <i class="fa-solid fa-pen"></i>
+                <span>Edit Easily</span>
+            </div>
 
-                <div class="form-group">
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-
-                <button id="submit-btn-id" type="submit" class="btn btn-add">Add Contact</button>
-                 <button id="updateBtn" style="display:none;">Update Contact</button>
-                <button id="clear-btn-id" type="button" class="btn btn-clear">Clear Form</button>
-            </form>
         </div>
 
-        <!-- Right Container - Search Contact -->
-        <div id="right-container" class="container">
-            <div class="container-header">
-                <h2> Search Contact</h2>
-            </div>
-            <div class="search-section">
-                <input type="text" id="searchInput" class="search-field" placeholder="Search by name or phone number...">
-                
-               
-                <div class="contact-list" id="contactDisplay">
-                    
-
-                </div>
-
-              
-            </div>
-        </div>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Features</h3>
-                <ul>
-                    <li>✓ Add and manage contacts</li>
-                    <li>✓ Search contacts easily</li>
-                    <li>✓ Edit contact information</li>
-                    <li>✓ Delete contacts</li>
-                    <li>✓ Save all changes</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>About ContactBook</h3>
-                <p>A simple and elegant contact management system to organize and manage your personal and professional contacts efficiently.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li>📧 support@contactbook.com</li>
-                    <li>📞 1-800-CONTACTS</li>
-                    <li>🌐 www.contactbook.com</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 ContactBook. All rights reserved.</p>
-        </div>
-    </footer>
+</section>
 
-    <script src="script.js"></script>
+<!-- ================= FEATURES ================= -->
+
+<section class="features" id="features">
+
+    <h2>Why Choose ContactBook?</h2>
+
+    <p class="section-subtitle">
+        Everything you need to organize your contacts efficiently.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <i class="fa-solid fa-user-plus"></i>
+            <h3>Add Contacts</h3>
+            <p>Save your contacts quickly with an easy-to-use interface.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h3>Instant Search</h3>
+            <p>Find contacts instantly while typing.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <h3>Edit Contacts</h3>
+            <p>Update information whenever needed.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-trash"></i>
+            <h3>Delete Contacts</h3>
+            <p>Remove outdated contacts in one click.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h3>Responsive</h3>
+            <p>Works perfectly across desktop and mobile devices.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-bolt"></i>
+            <h3>Fast Performance</h3>
+            <p>Built with pure JavaScript for speed and simplicity.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="timeline">
+
+    <h2>How It Works</h2>
+
+    <div class="timeline-container">
+
+        <div class="step">
+            <div class="circle">1</div>
+            <h3>Add Contact</h3>
+            <p>Create your contact list.</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle">2</div>
+            <h3>Search</h3>
+            <p>Find contacts instantly.</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle">3</div>
+            <h3>Edit</h3>
+            <p>Update contact details.</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle">4</div>
+            <h3>Delete</h3>
+            <p>Keep your list organized.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ROADMAP ================= -->
+
+<section class="roadmap" id="roadmap">
+
+    <h2>Future Roadmap</h2>
+
+    <div class="roadmap-grid">
+
+        <div class="roadmap-card">
+            <i class="fa-solid fa-server"></i>
+            <h3>Express.js</h3>
+            <p>Backend API Integration</p>
+        </div>
+
+        <div class="roadmap-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>MongoDB</h3>
+            <p>Store contacts permanently.</p>
+        </div>
+
+        <div class="roadmap-card">
+            <i class="fa-solid fa-lock"></i>
+            <h3>Authentication</h3>
+            <p>JWT Login & User Accounts.</p>
+        </div>
+
+        <div class="roadmap-card">
+            <i class="fa-solid fa-cloud"></i>
+            <h3>Deployment</h3>
+            <p>Deploy your application online.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta">
+
+    <h2>Ready to Organize Your Contacts?</h2>
+
+    <p>
+        Start using ContactBook today and simplify contact management.
+    </p>
+
+    <a href="contactbook.html" class="btn-primary">
+        Open ContactBook
+    </a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="about">
+
+    <h3>ContactBook</h3>
+
+    <p>Built with HTML • CSS • JavaScript</p>
+
+    <p>Version 1.0</p>
+
+    <p>&copy; 2026 ContactBook. All Rights Reserved.</p>
+
+</footer>
+
+<script src="landing.js"></script>
+
 </body>
 </html>
