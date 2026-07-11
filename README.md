@@ -9,21 +9,28 @@ A simple Contact Book application built using HTML, CSS, and Vanilla JavaScript.
 - ✅ Edit Contact
 - ✅ Update Contact
 - ✅ Delete Contact
+- ✅ Search Contacts
+- ✅ Local Storage Support
+- ✅ Form Validation (Username, Email, Mobile Number)
+- ✅ Landing Page
 
 ## Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript (ES6)
+- Local Storage
 
 ## Project Structure
 
 ```text
 ContactBook/
 │── index.html
+│── ContactBook.html
 │── style.css
+│── landing.css
 │── script.js
-```
+
 
 ## How to Run
 
@@ -33,8 +40,6 @@ ContactBook/
 
 ## Future Improvements
 
-- 🔍 Search Contacts
-- 💾 Local Storage
 - 🌐 Express.js Backend
 - 🍃 MongoDB Database
 - 📱 Responsive Design
