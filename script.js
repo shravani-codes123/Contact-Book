@@ -135,6 +135,7 @@ function displayContacts(list) {
          //creating edit button
             const editBtn = document.createElement("button");
             editBtn.textContent = "Edit";
+            editBtn.classList.add("btn-edit");
             editBtn.addEventListener("click", function() {
                
                 editContact(index);
@@ -142,6 +143,7 @@ function displayContacts(list) {
 
             const deleteBtn = document.createElement("button");
             deleteBtn.textContent = "Delete";
+            deleteBtn.classList.add("btn-delete");
             deleteBtn.addEventListener("click", function() {
                 contacts.splice(index, 1);
                 SaveContacts();

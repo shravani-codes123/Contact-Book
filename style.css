@@ -1,9 +1,4 @@
 
-/* ============================================
-   GENERAL STYLES
-   ============================================ */
-
-
 * {
     margin: 0;
     padding: 0;
@@ -16,9 +11,7 @@ body {
     color: #333;
 }
 
-/* ============================================
-   NAVBAR STYLES
-   ============================================ */
+
 #navbar {
     background: linear-gradient(135deg, #2563eb, #1e40af);
     color: white;
@@ -46,9 +39,7 @@ body {
     margin: 0;
 }
 
-/* ============================================
-   MAIN WRAPPER
-   ============================================ */
+
 .main-wrapper {
     display: flex;
     gap: 30px;
@@ -59,9 +50,6 @@ body {
 }
 
 
-/* ============================================
-   CONTAINER STYLES
-   ============================================ */
 .container {
     flex: 1;
     background-color: white;
@@ -72,7 +60,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    height: 650px;      /* Add this */
+    height: 650px;      
 }
 
 .container:hover {
@@ -93,9 +81,7 @@ body {
 #right-container {
     overflow: hidden;
 }
-/* ============================================
-   FORM STYLES
-   ============================================ */
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -136,9 +122,6 @@ body {
     color: #9ca3af;
 }
 
-/* ============================================
-   SEARCH SECTION
-   ============================================ */
 
 .search-section {
     display: flex;
@@ -202,9 +185,7 @@ body {
     color: #2563eb;
 }
 
-/* ============================================
-   CONTACT CARD STYLES
-   ============================================ */
+
 .contact-card {
     background-color: white;
     border: 1px solid #e5e7eb;
@@ -241,9 +222,6 @@ body {
 }
 
 
-/* ============================================
-   ACTION BUTTONS
-   ============================================ */
 .action-buttons {
     display: flex;
     gap: 15px;
@@ -291,9 +269,15 @@ body {
    background-color: #1e40af;
     color: #fafbfb;
     text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
     width: 70px;
     margin : 10px;
-    padding: 10px 24px;
+    padding:  10px 24px;
 }
 .btn-edit:hover {
     background-color: #1e40af;
@@ -303,7 +287,13 @@ body {
     background-color: #1e40af;
     color: white;
     text-transform: uppercase;
-    width: 70px;
+    width: 85px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
     margin : 10px;
     padding: 10px 24px;
 }
@@ -335,16 +325,24 @@ body {
     background-color: #059669;
     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
 }
-.updateBtn {
-    background-color: #facc15;
-    color: #0ea5e9;
-    width: 100%;
+
+#updateBtn {
+    background-color: #2563eb;
+    color: white;
     margin-top: 10px;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* ============================================
-   FOOTER STYLES
-   ============================================ */
+#updateBtn:hover {
+    background-color: #1e40af;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
 #footer {
     background: linear-gradient(135deg, #1e293b, #334155);
     color: white;
@@ -408,9 +406,7 @@ body {
     margin-top: 10px;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
+
 @media (max-width: 768px) {
    .main-wrapper {
     display: flex;
