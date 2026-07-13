@@ -5,238 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ContactBook | Manage Your Contacts</title>
 
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="style.css">
 
-   
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
+    <!-- Hero Section -->
 
+    <section class="hero">
 
-<header>
+        <div class="hero-left">
 
-    <nav class="navbar">
+            <h1>Manage Your Contacts Effortlessly</h1>
 
-        <div class="logo">
-            <i class="fa-solid fa-address-book"></i>
-            <span>ContactBook</span>
+            <p>
+                A simple Contact Book application built using HTML,
+                CSS and JavaScript. Store, search, edit and manage
+                your contacts quickly in one place.
+            </p>
+
+            <a href="ContactBook.html" class="btn">
+                Get Started
+            </a>
+
         </div>
 
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+        <div class="hero-right">
 
-    </nav>
-
-</header>
-
-
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <h1>Manage Your Contacts Effortlessly</h1>
-
-        <p>
-            Organize, search, edit and manage your contacts in one
-            clean, fast and responsive application.
-        </p>
-
-        <a href="contactbook.html" class="btn-primary">
-            Get Started
-            <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-        <div class="hero-highlights">
-
-            <div class="highlight">
-                <i class="fa-solid fa-user-plus"></i>
-                <span>Add Contacts</span>
+            <div class="card">
+                <h3>Add Contact</h3>
+                <p>Quickly save new contacts.</p>
             </div>
 
-            <div class="highlight">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <span>Fast Search</span>
+            <div class="card">
+                <h3>Search Contact</h3>
+                <p>Find contacts instantly.</p>
             </div>
 
-            <div class="highlight">
-                <i class="fa-solid fa-pen"></i>
-                <span>Edit Easily</span>
+            <div class="card">
+                <h3>Edit Contact</h3>
+                <p>Update contact details.</p>
+            </div>
+
+            <div class="card">
+                <h3>Delete Contact</h3>
+                <p>Remove unwanted contacts.</p>
+            </div>
+
+            <div class="card">
+                <h3>Export Contacts</h3>
+                <p>Download contacts as CSV.</p>
+            </div>
+
+            <div class="card">
+                <h3>Local Storage</h3>
+                <p>Data remains after refresh.</p>
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- Tech Stack -->
 
-<section class="features" id="features">
+    <section class="tech">
 
-    <h2>Why Choose ContactBook?</h2>
+        <h2>Built With</h2>
 
-    <p class="section-subtitle">
-        Everything you need to organize your contacts efficiently.
-    </p>
+        <div class="tech-list">
 
-    <div class="feature-grid">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Local Storage</span>
 
-        <div class="feature-card">
-            <i class="fa-solid fa-user-plus"></i>
-            <h3>Add Contacts</h3>
-            <p>Save your contacts quickly with an easy-to-use interface.</p>
         </div>
 
-        <div class="feature-card">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <h3>Instant Search</h3>
-            <p>Find contacts instantly while typing.</p>
-        </div>
+    </section>
 
-        <div class="feature-card">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <h3>Edit Contacts</h3>
-            <p>Update information whenever needed.</p>
-        </div>
+    <!-- Footer -->
 
-        <div class="feature-card">
-            <i class="fa-solid fa-trash"></i>
-            <h3>Delete Contacts</h3>
-            <p>Remove outdated contacts in one click.</p>
-        </div>
+    <footer>
 
-        <div class="feature-card">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <h3>Responsive</h3>
-            <p>Works perfectly across desktop and mobile devices.</p>
-        </div>
+        <h3>ContactBook</h3>
 
-        <div class="feature-card">
-            <i class="fa-solid fa-bolt"></i>
-            <h3>Fast Performance</h3>
-            <p>Built with pure JavaScript for speed and simplicity.</p>
-        </div>
+        <p>Built by Shravani Jadhav</p>
 
-    </div>
+        <p>HTML • CSS • JavaScript</p>
 
-</section>
+        <p>© 2026 All Rights Reserved.</p>
 
-
-
-<section class="timeline">
-
-    <h2>How It Works</h2>
-
-    <div class="timeline-container">
-
-        <div class="step">
-            <div class="circle">1</div>
-            <h3>Add Contact</h3>
-            <p>Create your contact list.</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="step">
-            <div class="circle">2</div>
-            <h3>Search</h3>
-            <p>Find contacts instantly.</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="step">
-            <div class="circle">3</div>
-            <h3>Edit</h3>
-            <p>Update contact details.</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="step">
-            <div class="circle">4</div>
-            <h3>Delete</h3>
-            <p>Keep your list organized.</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="roadmap" id="roadmap">
-
-    <h2>Future Roadmap</h2>
-
-    <div class="roadmap-grid">
-
-        <div class="roadmap-card">
-            <i class="fa-solid fa-server"></i>
-            <h3>Express.js</h3>
-            <p>Backend API Integration</p>
-        </div>
-
-        <div class="roadmap-card">
-            <i class="fa-solid fa-database"></i>
-            <h3>MongoDB</h3>
-            <p>Store contacts permanently.</p>
-        </div>
-
-        <div class="roadmap-card">
-            <i class="fa-solid fa-lock"></i>
-            <h3>Authentication</h3>
-            <p>JWT Login & User Accounts.</p>
-        </div>
-
-        <div class="roadmap-card">
-            <i class="fa-solid fa-cloud"></i>
-            <h3>Deployment</h3>
-            <p>Deploy your application online.</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<section class="cta">
-
-    <h2>Ready to Organize Your Contacts?</h2>
-
-    <p>
-        Start using ContactBook today and simplify contact management.
-    </p>
-
-    <a href="contactbook.html" class="btn-primary">
-        Open ContactBook
-    </a>
-
-</section>
-
-
-
-<footer id="about">
-
-    <h3>ContactBook</h3>
-
-    <p>Built with HTML • CSS • JavaScript</p>
-
-    <p>Version 1.0</p>
-
-    <p>&copy; 2026 ContactBook. All Rights Reserved.</p>
-
-</footer>
-
-<script src="landing.js"></script>
+    </footer>
 
 </body>
 </html>

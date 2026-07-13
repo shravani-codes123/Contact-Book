@@ -2,7 +2,6 @@
 const contacts = []
 
 
-
 let editingIndex = -1;
 const nameField = document.getElementById('name');
 const phoneField = document.getElementById('phone');
@@ -13,7 +12,10 @@ const updateBtn = document.getElementById('updateBtn');
 const clearBtn = document.getElementById('clear-btn-id');
 const contactDisplay = document.getElementById('contactDisplay');
 const searchInput = document.getElementById('searchInput');
-
+const sortSelect = document.getElementById("sortSelect");
+const contactCount = document.getElementById("contactCount");
+const exportBtn = document.getElementById("export-btn");
+const link = document.createElement("a");
 
 loadContacts();
 //validation for empty fields
@@ -22,31 +24,52 @@ function checkValidation(){
     const Username = nameField.value.trim();
     const MobileNumber = phoneField.value.trim();
     const Email = emailField.value.trim();
-
+    console.log("validaton")
     if(Username.length < 3){
         alert("Enter Username Contains atleast 3 characters. ")
         return false;
     } 
 
     if(MobileNumber.length!=10 || isNaN(MobileNumber)){
-        alert("Enter Valid Mobile Number.");
+       alert("Please enter a valid 10-digit mobile number.");
         return false;
     }
     
     if(!Email.includes('@')){
-        alert("email must contains '@' symbol");
+        alert("Please enter a valid email address (e.g., name@example.com).");
         return false;
     }
     return true;
 }
 
+function updateContactCount() {
+
+    contactCount.textContent = `Total Contacts : ${contacts.length}`;
+
+}
+
 if(nameField && phoneField && emailField && dateField && addContactbtn) {
     addContactbtn.addEventListener('click', function(e) {
-        e.preventDefault(); //prevent the default form 
-        //submission behavior
-
-        if (checkValidation()){
+        e.preventDefault();  
+        
+        
+        if (!checkValidation()){
             return;
+        }
+
+        const isDuplicate = contacts.some((contact)=>{
+   
+        return (
+            contact.phone === phoneField.value ||
+            //email comparision case - sensative
+            contact.email.toLowerCase() === emailField.value.toLowerCase()
+        );
+             
+        });
+
+        if(isDuplicate){
+           alert("Contact with this phone number or email already exists.")
+           return;
         }
 
         const contact = {
@@ -55,10 +78,12 @@ if(nameField && phoneField && emailField && dateField && addContactbtn) {
             email: emailField.value,
             date: dateField.value
         };
-
+        
+        console.log(contact)
         contacts.push(contact);// added the contact object to the contact array
+        console.log(contacts)
         SaveContacts();
-
+        updateContactCount()
         displayContacts(contacts)    
 
         console.log(contacts);
@@ -86,7 +111,7 @@ function loadContacts()
       }else{
         console.log("No contact Found!");
       }
-     
+      updateContactCount()
       displayContacts(contacts);
 
 }
@@ -144,10 +169,16 @@ function displayContacts(list) {
             const deleteBtn = document.createElement("button");
             deleteBtn.textContent = "Delete";
             deleteBtn.classList.add("btn-delete");
-            deleteBtn.addEventListener("click", function() {
+            deleteBtn.addEventListener("click", function() {    
+                const confirmation = confirm("Are you sure to delete contact?")
+                if(confirmation){   
                 contacts.splice(index, 1);
                 SaveContacts();
+                updateContactCount();
                 displayContacts(contacts);
+                }else{
+                    return;
+                }
             });
 
             buttonContainer.appendChild(editBtn);
@@ -165,6 +196,7 @@ function displayContacts(list) {
 
 }
 
+
 //function to clear form
 function clearForm() {
     nameField.value = "";
@@ -172,6 +204,16 @@ function clearForm() {
     emailField.value = "";
     dateField.value = "";
 }
+
+sortSelect.addEventListener("change" , function(){
+    const selectValue = sortSelect.value;
+    if(selectValue === "asc"){
+        contacts.sort((a, b) => a.name.localeCompare(b.name));
+    }else if (selectValue === "desc"){
+        contacts.sort((a, b) => b.name.localeCompare(a.name));
+    }
+    displayContacts(contacts);
+})
 
 updateBtn.addEventListener("click", function () {
 
@@ -199,6 +241,34 @@ updateBtn.addEventListener("click", function () {
     displayContacts(contacts);
 });
 
+
+exportBtn.addEventListener("click", exportContacts);
+
+function exportContacts() {
+   const data = JSON.parse(localStorage.getItem("contacts")) || [];
+
+   if (data.length === 0) {
+    alert("No contacts available to export.");
+    return;
+   }
+
+   let csv = "Name,Phone,Email\n";
+   data.forEach((contact) =>{
+       csv += `${contact.name},${contact.phone},${contact.email}\n`;
+   });
+   console.log(csv);
+
+   const blob = new Blob([csv], { type: "text/csv" });
+   const url = URL.createObjectURL(blob);//creating temporary url pointing to file.
+   link.href = url;
+   const today = new Date().toISOString().split("T")[0];
+
+   link.download = `ContactBook_${today}.csv`;
+
+   link.click();
+   URL.revokeObjectURL(url);
+}
+
 function editContact(index) {
 
     editingIndex = index;
@@ -217,7 +287,6 @@ function editContact(index) {
 }
 
 //search functionality 
-
 searchInput.addEventListener("input" ,function () {
     
    const Inputvalue = searchInput.value;
@@ -225,7 +294,12 @@ searchInput.addEventListener("input" ,function () {
    const lowerCase = Inputvalue.toLowerCase();
 
    const filteredContacts = contacts.filter((contact)=>{
-    return contact.name.toLowerCase().includes(lowerCase);
+
+    return (
+            contact.name.toLowerCase().includes(lowerCase) ||
+            contact.phone.includes(lowerCase) ||
+            contact.email.toLowerCase().includes(lowerCase)
+    );
    });
    
 
