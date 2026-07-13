@@ -1,6 +1,6 @@
 # 📇 Contact Book
 
-A simple and responsive **Contact Book application** built using **HTML, CSS, and Vanilla JavaScript**.
+A simple and responsive **Contact Book application** built using **HTML, CSS, and JavaScript**.
 
 ## Features
 
@@ -64,6 +64,10 @@ ContactBook/
 * 🔐 User Authentication
 * 📥 Import Contacts from CSV
 * 🌙 Dark Mode
+
+## Live Demo
+
+🔗 https://shravanijadhav09.github.io/Contact-Book/
 
 ## Author
 
